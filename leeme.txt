@@ -1,0 +1,40 @@
+=== Feed Globedia ===
+Autor: (Iker Barrena) Hispavista.com
+Tags: rss, feed, globedia
+Probado hasta la versión: 2.7.1
+Versión estable: 1.0
+
+== Descripción ==
+
+Globedia.com es un Diario Digital creado por Hispavista.com y gestionado y editado por la propia comunidad.
+
+Los usuarios pueden publicar sus propias noticias y contenidos directamente en Globedia.com (rol de "redactor") o automáticamente desde su propio blog con diversos conectores desarrollados para ello (rol de "colaborador"). 
+
+Como colaborador, en Globedia.com puedes automatizar la publicación de tus noticias a través del "rss completo", así, nada más publicarlo en tu blog la noticia aparecerá en Globedia. Pero, si el rss feed de tu blog no es completo, si sólo publicas un sumario y no te interesa cambiar esta configuración, entonces este plugin es para tí.
+
+Este plugin te creará un feed rss extra privado y oculto, sólo visible para Globedia.com, para que así puedas mantener la configuración original de tu feed de wordpress sin cambiar e independiente de tu colaboración con Globedia.com.
+
+Después de instalar este plugin en tu blog, para entrar en el "Programa de Colaboradores de Globedia" tienes que contactar con el Equipo de Globedia a través de la dirección de email globedia@hispavista.com y solicitar tu "código de verificación".
+
+Idiomas disponibles: Actualmente Globedia.com está sólo disponible para países de habla Hispana.
+
+Más información en: globedia.com
+
+
+
+== Instalación ==
+
+1. Descarga, extrae y sube en contenido del plugin a la carpeta wp-content/plugins
+2. Activa el plugin desde el panel de control en el apartado Plugins
+3. Una vez activado aparecerá un submenú en el administrador de Wordpress (Feed Globedia) y ahí...
+4. Inserta en el campo de Código de Verificación el código que Globedia.com te facilitará (solicitar en globedia@hispavista.com)
+
+Eso es todo.
+
+
+== Preguntas Frecuentes (FAQ) ==
+= ¿Posteriormente podré desactivar el plugin? =
+Desde el panel de plugins del administrador de Wordpress, podrás desactivar el plugin en cualquier momento, pero ten en cuenta que esto afectará a tus publicaciones en Globedia.com (dejará de publicar automáticamente).
+
+= ¿Puedo usar el plugin aunque tenga un RSS completo en mi blog? =
+Claro que sí, y además esto te permitirá hacer los cambios que quieras en tu RSS original de Wordpress, sin que esos cambios afecten a tus publicaciones en Globedia.com.

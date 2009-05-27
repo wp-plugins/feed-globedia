@@ -1,0 +1,27 @@
+.glbsettingsform label{
+	font-weight: bold;
+	display: block;
+}
+
+.glbsettingsform input[type="text"]{
+	width: 40em;
+}
+
+.glberror{
+	text-align: center;
+	color: #f00;
+	font-weight: bold;
+}
+
+.glbsettings{
+	padding: 0.4em;
+	background: #F1F1F1 url(../images/menu-bits.gif);
+	text-decoration: none;
+}
+.glbsettings:hover{
+	background: #6D6D6D url(../images/menu-bits.gif);
+	color: #ffc;
+}
+#registered, #due, #income{
+	width: 8em;
+}
