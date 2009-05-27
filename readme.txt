@@ -14,7 +14,7 @@ In Globedia.com you can automate news publishing from "full rss feeds". But, if 
 
 This plugin will create a hidden and non-public extra feed, only visible for Globedia.com, so you can maintain your original feeds own configuration unaltered.
 
-After you install this plugin in your blog, please contact the globedia crew at globedia@hispavista.com and ask for your own verification code.
+After you install this plugin in your blog, please contact the globedia crew at globedia [at] hispavista [dot] com and ask for your own verification code.
 
 Available languages: Actually Globedia.com is only available for Spanish-speaking countries.
 
