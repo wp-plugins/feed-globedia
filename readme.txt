@@ -1,5 +1,5 @@
 === Feed Globedia ===
-Contributors: (Iker Barrena) Hispavista.com
+Contributors: Iker Barrena (HispaVista.com)
 Tags: rss, feed, globedia
 Tested up to: 2.7.1
 Stable tag: 1.0

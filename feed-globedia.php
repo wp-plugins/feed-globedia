@@ -2,9 +2,9 @@
 /*
 Plugin Name: Feed Globedia
 Plugin URI: http://globedia.com/
-Description: Plugin para la creación de un RSS completo y privado para Globedia. 
+Description: This plugin will create a hidden and non-public extra feed, only visible for Globedia.com, so you can maintain your original feeds own configuration unaltered. 
 Author: Iker Barrena (HispaVista)
-Author URI: http://hispavista.com
+Author URI: http://www.hispavista.com
 Version: 1.0
 */
 
