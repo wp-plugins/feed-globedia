@@ -13,6 +13,12 @@
 	font-weight: bold;
 }
 
+.glbexito{
+	text-align: center;
+	color: #0c0;
+	font-weight: bold;
+}
+
 .glbsettings{
 	padding: 0.4em;
 	background: #F1F1F1 url(../images/menu-bits.gif);

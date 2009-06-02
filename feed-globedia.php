@@ -2,10 +2,10 @@
 /*
 Plugin Name: Feed Globedia
 Plugin URI: http://globedia.com/
-Description: This plugin will create a hidden and non-public extra feed, only visible for Globedia.com, so you can maintain your original feeds own configuration unaltered. 
+Description: Plugin para la creación de un RSS completo y privado para Globedia. 
 Author: Iker Barrena (HispaVista)
-Author URI: http://www.hispavista.com
-Version: 1.0
+Author URI: http://globedia.com
+Version: 0.1
 */
 
 define('GLB_FILE', 'feed-globedia/feed-globedia.php');
@@ -65,10 +65,15 @@ class FeedGlobedia {
 			//Se ha insertado algo
 			$frm_hash = $wpdb->escape($_GET['frm_hash']);
 			//validamos contra globedia y si todo va bien
+
 			if ($this->verify_key($frm_hash))
 			{
 				$glb_hash = $frm_hash;
 				update_option('glb_hash', $glb_hash);
+
+				?>
+				<div class="glbexito">El plugin ha sido activado correctamente</div>
+				<?php
 			}
 			else
 			{
@@ -93,18 +98,19 @@ class FeedGlobedia {
 	
 	function verify_key( $key ) {
 		$url = urlencode( get_option('home') );
-		$response = $this->http_post("key=$key&url=$url&status=1", 'es.globedia.com', '/wp-activate/');
-		if ( !is_array($response) || !isset($response[1]) || !is_integer($response[1]) ) return 0;
-		return $response[1];
+		$response = $this->http_post("key=$key&url=$url&status=1", 'globedia.com', '/wp-activate/');
+		if ( !is_array($response) || !isset($response[1]) || !ereg("[0-9]+", $response[1]) ) return 0;
+		return ($response[1]);
 	}
 
-	function deactivate_user( $key ) {
+	function deactivate_user() {
+		$key = get_option('glb_hash');
 		$url = urlencode( get_option('home') );
-		$response = $this->http_post("key=$key&url=$url&status=0", 'es.globedia.com', '/wp-activate/');
-		if ( !is_array($response) || !isset($response[1]) || !is_integer($response[1]) ) return 0;
+		$response = $this->http_post("key=$key&url=$url&status=0", 'globedia.com', '/wp-activate/');
+		if ( !is_array($response) || !isset($response[1]) || !ereg("[0-9]+", $response[1]) ) return 0;
 		return $response[1];
 	}
-
+         
 	function http_post($request, $host, $path) {
 		global $wp_version;
 	
@@ -112,13 +118,13 @@ class FeedGlobedia {
 		$http_request .= "Host: $host\r\n";
 		$http_request .= "Content-Type: application/x-www-form-urlencoded; charset=" . get_option('blog_charset') . "\r\n";
 		$http_request .= "Content-Length: " . strlen($request) . "\r\n";
-		$http_request .= "User-Agent: WordPress/$wp_version | Globedia/2.0\r\n";
+		$http_request .= "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; es-ES; rv:1.9) Gecko/2008052906 Firefox/3.0 (.NET CLR 3.5.30729)\r\n";
 		$http_request .= "\r\n";
 		$http_request .= $request;
 	
 		$response = '';
 		if( false != ( $fs = @fsockopen($host, 80, $errno, $errstr, 10) ) ) {
-			fwrite($fs, $http_request);
+                       fwrite($fs, $http_request);
 	
 			while ( !feof($fs) )
 				$response .= fgets($fs, 1160); // One TCP-IP packet
