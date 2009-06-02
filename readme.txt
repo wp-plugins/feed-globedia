@@ -21,7 +21,6 @@ Available languages: Actually Globedia.com is only available for Spanish-speakin
 More info at: globedia.com
 
 
-
 == Installation ==
 
 1. Download, extract and upload to the wp-content/plugins folder

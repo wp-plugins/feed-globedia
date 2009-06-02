@@ -94,7 +94,6 @@ class FeedGlobedia {
 	function verify_key( $key ) {
 		$url = urlencode( get_option('home') );
 		$response = $this->http_post("key=$key&url=$url&status=1", 'es.globedia.com', '/wp-activate/');
-		print_r($response);
 		if ( !is_array($response) || !isset($response[1]) || !is_integer($response[1]) ) return 0;
 		return $response[1];
 	}
