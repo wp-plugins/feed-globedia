@@ -2,7 +2,7 @@
 Autor: (Iker Barrena) Hispavista.com
 Tags: rss, feed, globedia
 Probado hasta la versión: 2.7.1
-Versión estable: 1.0
+Versión estable: 2.0
 
 == Descripción ==
 
@@ -38,3 +38,10 @@ Desde el panel de plugins del administrador de Wordpress, podrás desactivar el p
 
 = ¿Puedo usar el plugin aunque tenga un RSS completo en mi blog? =
 Claro que sí, y además esto te permitirá hacer los cambios que quieras en tu RSS original de Wordpress, sin que esos cambios afecten a tus publicaciones en Globedia.com.
+
+
+== Version ==
+
+2.0 - (Versión actual). Añadida compatibilidad con el plugin FeedBurner FeedSmith.
+
+1.0 - Versión Estable Inicial.

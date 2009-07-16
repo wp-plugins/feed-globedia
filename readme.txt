@@ -2,7 +2,7 @@
 Contributors: Iker Barrena (HispaVista.com)
 Tags: rss, feed, globedia
 Tested up to: 2.7.1
-Stable tag: 1.0
+Stable tag: 2.0
 
 == Description ==
 
@@ -20,7 +20,6 @@ Available languages: Actually Globedia.com is only available for Spanish-speakin
 
 More info at: globedia.com
 
-
 == Installation ==
 
 1. Download, extract and upload to the wp-content/plugins folder
@@ -36,3 +35,10 @@ That's it.
 
 = Can I use this plugin although I have a full feed? =
 Of course, and doing that will let you change your original feed configuration anytime without affecting your Globedia.com publishing.
+
+
+== Version ==
+
+2.0 - (Current Version). Compatibility with FeedBurner FeedSmith Plugin added.
+
+1.0 - Initial Stable Version.

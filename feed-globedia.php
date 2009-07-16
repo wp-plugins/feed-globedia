@@ -5,7 +5,7 @@ Plugin URI: http://globedia.com/
 Description: Plugin para la creación de un RSS completo y privado para Globedia. 
 Author: Iker Barrena (HispaVista)
 Author URI: http://globedia.com
-Version: 0.1
+Version: 2.0
 */
 
 define('GLB_FILE', 'feed-globedia/feed-globedia.php');
@@ -17,9 +17,30 @@ class FeedGlobedia {
 	function FeedGlobedia() {
 		add_action('admin_menu', array(&$this, 'administrator'));
 		add_action('admin_head', array(&$this, 'head'));
+		add_filter('query_vars', array(&$this, 'add_query_vars'));
 		add_action('generate_rewrite_rules', array(&$this, 'add_feed_globedia_rewrite_rules'));
+		add_action('template_redirect', array(&$this, 'template_redirect_file'));
 		add_action('init', array(&$this, 'add_feed_globedia'));
 		register_deactivation_hook(__FILE__, array(&$this, 'deactivate_user'));
+	}
+	function template_redirect_file()
+	{
+		global $wp_query;
+		if ( $hash = $wp_query->get('feed-globedia') )
+		{
+			$glb_hash = get_option('glb_hash');
+			
+			if ($hash==$glb_hash && file_exists( WP_PLUGIN_DIR . '/feed-globedia/feed-rss2.php'))
+			{
+				include( WP_PLUGIN_DIR . '/feed-globedia/feed-rss2.php' );
+				exit;
+			}
+		}
+	}
+	function add_query_vars( $qvars )
+	{
+		$qvars[] = 'feed-globedia';
+		return $qvars;
 	}
 	
 	function add_feed_globedia() {
@@ -31,9 +52,10 @@ class FeedGlobedia {
 	}
 			
 	function add_feed_globedia_rewrite_rules( $wp_rewrite ) {
-		$new_rules = array(
-			'feed/(.+)' => 'index.php?feed='.$wp_rewrite->preg_index(1)
-		);
+               // echo dirname(__FILE__);
+		$new_rules = array( 'feed-globedia/(.+)' => 'index.php?feed-globedia='.$wp_rewrite->preg_index(1),
+							'feed/(.+)' => 'index.php?feed='.$wp_rewrite->preg_index(1));
+		//'index.php?feed='.$wp_rewrite->preg_index(1)
 		$wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
 	}
 
