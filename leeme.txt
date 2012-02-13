@@ -1,5 +1,5 @@
 === Feed Globedia ===
-Autor: (Iker Barrena) Hispavista.com
+Autor: Iker Barrena
 Tags: rss, feed, globedia
 Probado hasta la versión: 2.7.1
 Versión estable: 2.0
